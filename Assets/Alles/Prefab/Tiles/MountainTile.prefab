@@ -1,22 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8689232944415856964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6706023566641488332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859ceb35d42dc01479ba47d4c63aa232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseColor: {r: 0, g: 1, b: 0, a: 1}
-  offsetColor: {r: 0, g: 1, b: 0, a: 1}
-  renderer: {fileID: 7395863070690384043}
-  Hightlight: {fileID: 3425617965940398443}
---- !u!1001 &2794653155778345237
+--- !u!1001 &3253600612357803772
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -67,24 +51,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4642077044131865022, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642077044131865022, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642077044131865022, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3137255
+      objectReference: {fileID: 0}
     - target: {fileID: 8923898992937916633, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
       propertyPath: m_Name
-      value: GrassTile
+      value: MountainTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
---- !u!1 &6706023566641488332 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8923898992937916633, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
-  m_PrefabInstance: {fileID: 2794653155778345237}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &7395863070690384043 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4642077044131865022, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
-  m_PrefabInstance: {fileID: 2794653155778345237}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3425617965940398443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 667279720739856510, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
-  m_PrefabInstance: {fileID: 2794653155778345237}
-  m_PrefabAsset: {fileID: 0}

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Color baseColor, offsetColor;
+    [SerializeField] private SpriteRenderer renderer;
 
-    // Update is called once per frame
-    void Update()
+    public void Init(bool isOffset)
     {
-        
+        renderer.color = isOffset ? offsetColor : baseColor;
     }
 }

@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 14
   height: 7
-  tilePrefab: {fileID: 5272472373094958363, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+  tilePrefab: {fileID: 8689232944415856964, guid: f4c7897af914a54429d61238bf41bca6, type: 3}
   cam: {fileID: 519420032}
 --- !u!1 &1278215728
 GameObject:

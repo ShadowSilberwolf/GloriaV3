@@ -830,3 +830,58 @@ Received Import Request.
   path: Assets/Alles/Prefab/Tiles/GrassTile.prefab
   artifactKey: Guid(f4c7897af914a54429d61238bf41bca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Alles/Prefab/Tiles/GrassTile.prefab using Guid(f4c7897af914a54429d61238bf41bca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '803c86647693317e4d1f00b9a4821c15') in 0.013952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1000.264865 seconds.
+  path: Assets/Alles/Scripts/Tiles/GrassTile.cs
+  artifactKey: Guid(859ceb35d42dc01479ba47d4c63aa232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Scripts/Tiles/GrassTile.cs using Guid(859ceb35d42dc01479ba47d4c63aa232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40ab9ad4dc1a65d76cb688517a38f417') in 0.008268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 83.509786 seconds.
+  path: Assets/Alles/Prefab/Tiles/GrassTile.prefab
+  artifactKey: Guid(f4c7897af914a54429d61238bf41bca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/GrassTile.prefab using Guid(f4c7897af914a54429d61238bf41bca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f35a42959fe28dcee67cafa0661697c7') in 0.021997 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.891375 seconds.
+  path: Assets/Alles/Prefab/Tiles/MountainTile.prefab
+  artifactKey: Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/MountainTile.prefab using Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a21a27a2b6f12471f6bde84edd0ce47') in 0.012755 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.891625 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png
+  artifactKey: Guid(311925a002f4447b3a28927169b83ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png using Guid(311925a002f4447b3a28927169b83ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d11a2b5e419d81c1cac3b65bb59dde8') in 0.044177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 98.014061 seconds.
+  path: Assets/Alles/Prefab/Tiles/MountainTile.prefab
+  artifactKey: Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/MountainTile.prefab using Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd37620ffb948c73405d147286f6b372') in 0.012721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.956587 seconds.
+  path: Assets/Alles/Prefab/Tiles/MountainTile.prefab
+  artifactKey: Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/MountainTile.prefab using Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2266c85f634073d26125f522c2be0d7') in 0.011817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.984783 seconds.
+  path: Assets/Alles/Prefab/Tiles/MountainTile.prefab
+  artifactKey: Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/MountainTile.prefab using Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2dc15d3c2e5a1614246dcf02040bc21') in 0.013209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.477325 seconds.
+  path: Assets/Alles/Prefab/Tiles/MountainTile.prefab
+  artifactKey: Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/MountainTile.prefab using Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcef7ad90ef402c5bd184e871e3446d5') in 0.012703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.516189 seconds.
+  path: Assets/Alles/Prefab/Tiles/MountainTile.prefab
+  artifactKey: Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alles/Prefab/Tiles/MountainTile.prefab using Guid(96645ffbce468b34f950d0990dfd8c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdcc7418d95dfef4a60594b83776599e') in 0.011936 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -6,9 +6,10 @@ public class Grid : MonoBehaviour
 {
     [SerializeField] private int width, height;
 
-    [SerializeField] private Tile tilePrefab;
-
+    [SerializeField] private Tile GrassTile, MountainTile;
+    //[SerializeField] private Tile baseTile;
     [SerializeField] private Transform cam;
+
 
     private Dictionary<Vector2, Tile> tiles;
 
@@ -26,7 +27,8 @@ public class Grid : MonoBehaviour
         {
             for(int y = 0; y < height; y++)
             {
-                var spawnedTile = Instantiate(tilePrefab, new Vector3(x, y), Quaternion.identity);
+                var randomTile = Random.Range(0, 6) == 3 ? GrassTile : MountainTile;
+                var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
 
                 var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);

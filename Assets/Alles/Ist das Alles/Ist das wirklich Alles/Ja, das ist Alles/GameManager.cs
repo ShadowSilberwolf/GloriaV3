@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMann : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameMann Instance;
+    public static GameManager Instance;
     public GameState GameState;
+
+    public static event Action<GameState> OnGameStateChanged;
 
     private void Awake()
     {
@@ -23,6 +26,7 @@ public class GameMann : MonoBehaviour
         switch (newState)
         {
             case GameState.GenerateGrid:
+                Grid.Instance.GenerateGrid();
                 break;
             case GameState.SpawnHeroes:
                 break;
@@ -32,13 +36,19 @@ public class GameMann : MonoBehaviour
                 break;
             case GameState.EnemysTurn:
                 break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+                 default:
+                  throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
-    }
 
-    public enum GameState
-    {
-
+        OnGameStateChanged?.Invoke(newState);
     }
+}
+
+public enum GameState
+{
+    GenerateGrid = 0,
+    SpawnHeroes = 1,
+    SpawnEnemys = 2,
+    HeroesTurn = 3,
+    EnemysTurn = 4
 }

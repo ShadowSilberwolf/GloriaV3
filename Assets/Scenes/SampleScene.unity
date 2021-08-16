@@ -251,7 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 14
   height: 7
-  tilePrefab: {fileID: 8689232944415856964, guid: f4c7897af914a54429d61238bf41bca6, type: 3}
+  GrassTile: {fileID: 8689232944415856964, guid: f4c7897af914a54429d61238bf41bca6, type: 3}
+  MountainTile: {fileID: 737466292168966031, guid: 96645ffbce468b34f950d0990dfd8c03, type: 3}
   cam: {fileID: 519420032}
 --- !u!1 &1278215728
 GameObject:

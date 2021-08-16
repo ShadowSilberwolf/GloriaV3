@@ -27,7 +27,7 @@ public class Grid : MonoBehaviour
         {
             for(int y = 0; y < height; y++)
             {
-                var randomTile = Random.Range(0, 6) == 3 ? GrassTile : MountainTile;
+                var randomTile = Random.Range(0, 6) == 3 ?  MountainTile : GrassTile;
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
 

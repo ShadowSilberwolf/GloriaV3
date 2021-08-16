@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
+    public static Grid Instance;
     [SerializeField] private int width, height;
 
     [SerializeField] private Tile GrassTile, MountainTile;
@@ -13,11 +14,11 @@ public class Grid : MonoBehaviour
 
     private Dictionary<Vector2, Tile> tiles;
 
-    void Start()
+    private void Awake()
     {
-        
-        GenerateGrid();
+        Instance = this;
     }
+   
 
     public void GenerateGrid()
     {
@@ -31,8 +32,8 @@ public class Grid : MonoBehaviour
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
 
-                var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
-                spawnedTile.Init(isOffset);
+                
+                spawnedTile.Init(x,y);
 
 
                 tiles[new Vector2(x, y)] = spawnedTile;

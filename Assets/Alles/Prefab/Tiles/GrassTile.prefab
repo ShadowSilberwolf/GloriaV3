@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859ceb35d42dc01479ba47d4c63aa232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0, g: 1, b: 0, a: 1}
-  offsetColor: {r: 0, g: 1, b: 0, a: 1}
   renderer: {fileID: 7395863070690384043}
   Hightlight: {fileID: 3425617965940398443}
+  baseColor: {r: 0, g: 1, b: 0, a: 1}
+  offsetColor: {r: 0, g: 0.6226415, b: 0, a: 1}
 --- !u!1001 &2794653155778345237
 PrefabInstance:
   m_ObjectHideFlags: 0

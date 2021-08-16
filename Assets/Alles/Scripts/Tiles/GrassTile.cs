@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GrassTile : Tile
 {
+    [SerializeField] private Color baseColor, offsetColor;
     // Start is called before the first frame update
-    void Start()
+    public override void Init(int x, int y)
     {
-        
+        var isOffset = (x + y) % 2 == 1;
+        renderer.color = isOffset ? offsetColor : baseColor;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 7875921631559626562}
   Hightlight: {fileID: 2622708903595601538}
+  isWalkable: 1
+  OccupiedUnits: {fileID: 0}
   baseColor: {r: 0.4528302, g: 0.17314397, b: 0, a: 1}
   offsetColor: {r: 0.24528301, g: 0.09515289, b: 0, a: 1}
 --- !u!1001 &3253600612357803772

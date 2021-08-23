@@ -15,7 +15,7 @@ public class UnitManager : MonoBehaviour
     }
     public void SpawnEnemys()
     {
-        var enemyCount = 3;
+        var enemyCount = 1;
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -25,10 +25,11 @@ public class UnitManager : MonoBehaviour
 
             randomSpawnTile.SetUnit(spawnedEnemy);
         }
+        GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
     public void SpawnHeroes()
     {
-        var heroCount = 3;
+        var heroCount = 1;
 
         for(int i = 0; i < heroCount; i++)
         {
@@ -37,7 +38,11 @@ public class UnitManager : MonoBehaviour
             var randomSpawnTile = Grid.Instance.GetHerospawnTile();
 
             randomSpawnTile.SetUnit(spawnedHero);
+
+
         }
+
+        GameManager.Instance.ChangeState(GameState.SpawnEnemys);
     }
 
     private T GetRandomUnit<T>(Faction faction) where T : BaseUnits

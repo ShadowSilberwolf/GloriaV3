@@ -26,6 +26,32 @@ public abstract class Tile : MonoBehaviour
         Hightlight.SetActive(false);
     }
 
+    private void OnMouseDown()
+    {
+        if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
+
+        if(OccupiedUnits != null)
+        {
+            if (OccupiedUnits.faction == Faction.Player1)UnitManager.Instance.SetSelectedPlayer((BasePlayer1)OccupiedUnits);
+            else
+            {
+                if(UnitManager.Instance.SelectedPlayer != null)
+                {
+                    var enemy = (BasePlayer2)OccupiedUnits;
+                    UnitManager.Instance.SetSelectedPlayer(null);
+                }
+            }
+        }
+        else
+        {
+            if(UnitManager.Instance.SelectedPlayer != null)
+            {
+                SetUnit(UnitManager.Instance.SelectedPlayer);
+                UnitManager.Instance.SetSelectedPlayer(null);
+            }
+        }
+    }
+
     public void SetUnit(BaseUnits unit)
     {
         if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnits = null;

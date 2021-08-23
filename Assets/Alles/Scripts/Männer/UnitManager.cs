@@ -13,10 +13,22 @@ public class UnitManager : MonoBehaviour
 
         Unitys = Resources.LoadAll<ScriptableUnit>("Units").ToList();
     }
+    public void SpawnEnemys()
+    {
+        var enemyCount = 3;
 
+        for (int i = 0; i < enemyCount; i++)
+        {
+            var randomPrefab = GetRandomUnit<BasePlayer2>(Faction.Player2);
+            var spawnedEnemy = Instantiate(randomPrefab);
+            var randomSpawnTile = Grid.Instance.GetEnemyspawnTile();
+
+            randomSpawnTile.SetUnit(spawnedEnemy);
+        }
+    }
     public void SpawnHeroes()
     {
-        var heroCount = 1;
+        var heroCount = 3;
 
         for(int i = 0; i < heroCount; i++)
         {

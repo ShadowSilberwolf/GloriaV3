@@ -6,4 +6,5 @@ public class BaseUnits : MonoBehaviour
 {
     public Tile OccupiedTile;
     public Faction faction;
+    public string unitName;
 }

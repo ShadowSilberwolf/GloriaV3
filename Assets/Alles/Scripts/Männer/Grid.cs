@@ -3,22 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System;
 
-public class Grid : MonoBehaviour
+public class Grid 
 {
-    public static Grid Instance;
-    [SerializeField] private int width, height;
+    
+    private int width, height;
+    public int[,] gridArray;
+    
 
     [SerializeField] private Tile GrassTile, MountainTile;
-    //[SerializeField] private Tile baseTile;
+    
     [SerializeField] private Transform cam;
 
 
     private Dictionary<Vector2, Tile> tiles;
 
-    private void Awake()
+   public Grid(int Width, int Height)
     {
-        Instance = this;
+        width = Width;
+        height = Height;
+        gridArray = new int[width, height];
+
+        
     }
    
 
@@ -26,9 +33,9 @@ public class Grid : MonoBehaviour
     {
         tiles = new Dictionary<Vector2, Tile>();
 
-        for (int x = 0; x < width; x++)
+        for (int x = 0; x < gridArray.GetLength(0); x++)
         {
-            for(int y = 0; y < height; y++)
+            for(int y = 0; y < gridArray.GetLength(1); y++)
             {
                 var randomTile = Random.Range(0, 6) == 3 ?  MountainTile : GrassTile;
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
@@ -40,6 +47,7 @@ public class Grid : MonoBehaviour
 
                 tiles[new Vector2(x, y)] = spawnedTile;
 
+                
             }
         }
 
@@ -68,5 +76,5 @@ public class Grid : MonoBehaviour
 
         return null;
     }
-
+    
 }

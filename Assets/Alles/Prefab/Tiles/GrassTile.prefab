@@ -153,6 +153,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4162147236032019213, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.a
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162147236032019213, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162147236032019213, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162147236032019213, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162147236032019213, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8923898992937916633, guid: fbbd30dd795ead145912fba868bde1b0, type: 3}
       propertyPath: m_Name
       value: GrassTile

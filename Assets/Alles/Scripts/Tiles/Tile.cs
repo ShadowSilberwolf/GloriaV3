@@ -8,6 +8,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] protected SpriteRenderer renderer;
     [SerializeField] private GameObject Hightlight;
     [SerializeField] private bool isWalkable;
+    public string TileName;
 
     public BaseUnits OccupiedUnits;
     public bool Walkable => isWalkable && OccupiedUnits == null;
@@ -20,10 +21,13 @@ public abstract class Tile : MonoBehaviour
     private void OnMouseEnter()
     {
         Hightlight.SetActive(true);
+        MenuManager.Instance.ShowTileInfo(this);
     }
     private void OnMouseExit()
     {
         Hightlight.SetActive(false);
+        MenuManager.Instance.ShowTileInfo(null);
+
     }
 
     private void OnMouseDown()
@@ -39,6 +43,7 @@ public abstract class Tile : MonoBehaviour
                 {
                     var enemy = (BasePlayer2)OccupiedUnits;
                     UnitManager.Instance.SetSelectedPlayer(null);
+                    GameManager.Instance.ChangeState(GameState.HeroesTurn);
                 }
             }
         }

@@ -26,11 +26,11 @@ public class UnitManager : MonoBehaviour
 
             randomSpawnTile.SetUnit(spawnedEnemy);
         }
-        GameManager.Instance.ChangeState(GameState.HeroesTurn);
+        GameManager.Instance.ChangeState(GameState.EnemysTurn);
     }
     public void SpawnHeroes()
     {
-        var heroCount = 1;
+        var heroCount = 2;
 
         for(int i = 0; i < heroCount; i++)
         {
@@ -54,5 +54,6 @@ public class UnitManager : MonoBehaviour
     public void SetSelectedPlayer(BasePlayer1 Hero)
     {
         SelectedPlayer = Hero;
+        MenuManager.Instance.ShowselectedHero(Hero);
     }
 }

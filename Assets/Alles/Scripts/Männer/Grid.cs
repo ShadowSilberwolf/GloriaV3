@@ -10,6 +10,8 @@ public class Grid : MonoBehaviour
     public static Grid Instance;
     [SerializeField] private int width, height;
     public int[,] gridArray;
+
+   // public Tile[,] tileArray;
     
 
     [SerializeField] private Tile GrassTile, MountainTile;
@@ -39,14 +41,15 @@ public class Grid : MonoBehaviour
                 var randomTile = Random.Range(0, 6) == 3 ?  MountainTile : GrassTile;
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
-
+               // tileArray[x, y] = spawnedTile;
                 
                 spawnedTile.Init(x,y);
 
 
                 tiles[new Vector2(x, y)] = spawnedTile;
-
                 
+               // int randomValue = Random.Range(1, 30);
+               // SetValue(x, y, randomValue);
             }
         }
 
@@ -76,4 +79,23 @@ public class Grid : MonoBehaviour
         return null;
     }
     
+    public void SetValue(int x, int y, int value)
+    {
+        if ( x>= 0 && y >= 0 && x < width && y < height)
+        {
+            gridArray[x, y] = value;
+        }
+    }
+
+    public int GetValue(int x, int y)
+    {
+        if (x >= 0 && y >= 0 && x < width && y < height)
+        {
+            return gridArray[x, y];
+        }
+        else
+        {
+            return 0;
+        }
+    }
 }

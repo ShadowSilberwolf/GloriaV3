@@ -5,10 +5,10 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using System;
 
-public class Grid 
+public class Grid : MonoBehaviour
 {
-    
-    private int width, height;
+    public static Grid Instance;
+    [SerializeField] private int width, height;
     public int[,] gridArray;
     
 
@@ -19,10 +19,9 @@ public class Grid
 
     private Dictionary<Vector2, Tile> tiles;
 
-   public Grid(int Width, int Height)
+   public void Start()
     {
-        width = Width;
-        height = Height;
+        Instance = this;
         gridArray = new int[width, height];
 
         

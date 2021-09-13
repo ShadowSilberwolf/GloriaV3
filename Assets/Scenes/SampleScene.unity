@@ -516,6 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 591105980}
+  - component: {fileID: 591105981}
   m_Layer: 6
   m_Name: GridManager
   m_TagString: Untagged
@@ -537,6 +538,23 @@ Transform:
   m_Father: {fileID: 953311042}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &591105981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591105979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda5ccc92e0adc349b48b46df507a5dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 15
+  height: 10
+  GrassTile: {fileID: 8689232944415856964, guid: f4c7897af914a54429d61238bf41bca6, type: 3}
+  MountainTile: {fileID: 737466292168966031, guid: 96645ffbce468b34f950d0990dfd8c03, type: 3}
+  cam: {fileID: 519420032}
 --- !u!1 &660345777
 GameObject:
   m_ObjectHideFlags: 0

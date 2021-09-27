@@ -26,7 +26,7 @@ public class UnitManager : MonoBehaviour
 
             randomSpawnTile.SetUnit(spawnedEnemy);
         }
-        GameManager.Instance.ChangeState(GameState.EnemysTurn);
+        GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
     public void SpawnHeroes()
     {

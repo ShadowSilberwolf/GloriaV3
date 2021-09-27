@@ -30,9 +30,8 @@ public abstract class Tile : MonoBehaviour
 
     }
 
-    public void OnMouseDown()
+    private void OnMouseDown()
     {
-        Debug.Log("Boobs");
         if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
 
         if(OccupiedUnits != null)

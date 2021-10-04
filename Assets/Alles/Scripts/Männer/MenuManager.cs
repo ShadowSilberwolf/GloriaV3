@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void ShowselectedHero(BasePlayer1 PlayerOne)
+    public void ShowselectedHero(BaseUnits PlayerOne)
     {
         if(PlayerOne == null)
         {

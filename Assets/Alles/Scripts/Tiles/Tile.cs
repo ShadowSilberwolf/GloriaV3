@@ -32,20 +32,32 @@ public abstract class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
+        //if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
 
         if(OccupiedUnits != null)
         {
-            if (OccupiedUnits.faction == Faction.Player1)UnitManager.Instance.SetSelectedPlayer((BasePlayer1)OccupiedUnits);
-            else
+            if (OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.HeroesTurn)
             {
-                if(UnitManager.Instance.SelectedPlayer != null)
-                {
-                    var enemy = (BasePlayer2)OccupiedUnits;
-                    UnitManager.Instance.SetSelectedPlayer(null);
-                    GameManager.Instance.ChangeState(GameState.HeroesTurn);
-                }
+                UnitManager.Instance.SetSelectedPlayer(OccupiedUnits);
             }
+
+            else if(OccupiedUnits.faction == Faction.Player2 && GameManager.Instance.GameState == GameState.EnemysTurn) 
+            {
+                UnitManager.Instance.SetSelectedPlayer(OccupiedUnits);
+            }
+            else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player2 && GameManager.Instance.GameState == GameState.HeroesTurn)
+            {
+                UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
+                UnitManager.Instance.SetSelectedPlayer(null);
+                GameManager.Instance.ChangeState(GameState.EnemysTurn);
+            }
+            else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.EnemysTurn)
+            {
+                UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
+                UnitManager.Instance.SetSelectedPlayer(null);
+                GameManager.Instance.ChangeState(GameState.HeroesTurn);
+            }
+
         }
         else
         {
@@ -53,6 +65,14 @@ public abstract class Tile : MonoBehaviour
             {
                 SetUnit(UnitManager.Instance.SelectedPlayer);
                 UnitManager.Instance.SetSelectedPlayer(null);
+                if(GameManager.Instance.GameState == GameState.EnemysTurn)
+                {
+                    GameManager.Instance.ChangeState(GameState.HeroesTurn);
+                }
+                else if(GameManager.Instance.GameState == GameState.HeroesTurn)
+                {
+                    GameManager.Instance.ChangeState(GameState.EnemysTurn);
+                }
             }
         }
     }

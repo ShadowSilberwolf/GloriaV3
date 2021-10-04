@@ -8,16 +8,16 @@ public class BaseUnits : MonoBehaviour
     public Faction faction;
     public string unitName;
 
-    public int health;
-    public int Damage;
-    public int Armor;
+    public int health = 1000;
+    public int Damage = 250;
+    public int Armor = 50;
 
     public void Attack(BaseUnits target)
     {
         target.health = target.health - (Damage - target.Armor);
         if(target.health <= 0)
         {
-            Destroy(target);
+            Destroy(target.gameObject);
         }
     }
 

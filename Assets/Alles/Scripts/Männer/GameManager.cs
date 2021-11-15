@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public GameState GameState;
+    
 
     public static event Action<GameState> OnGameStateChanged;
 
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void ChangeState(GameState newState)
     {
         GameState = newState;
+        
         switch (newState)
         {
             case GameState.GenerateGrid:
@@ -42,8 +44,10 @@ public class GameManager : MonoBehaviour
                  default:
                   throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
-
+       
         OnGameStateChanged?.Invoke(newState);
+
+       
     }
 }
 

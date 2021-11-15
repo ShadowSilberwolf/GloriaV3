@@ -50,12 +50,14 @@ public abstract class Tile : MonoBehaviour
                 UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
                 UnitManager.Instance.SetSelectedPlayer(null);
                 GameManager.Instance.ChangeState(GameState.EnemysTurn);
+                MenuManager.Instance.BenjaminRedGreen();
             }
             else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.EnemysTurn)
             {
                 UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
                 UnitManager.Instance.SetSelectedPlayer(null);
                 GameManager.Instance.ChangeState(GameState.HeroesTurn);
+                MenuManager.Instance.BenjaminRedGreen();
             }
 
         }
@@ -68,10 +70,12 @@ public abstract class Tile : MonoBehaviour
                 if(GameManager.Instance.GameState == GameState.EnemysTurn)
                 {
                     GameManager.Instance.ChangeState(GameState.HeroesTurn);
+                    MenuManager.Instance.BenjaminRedGreen();
                 }
                 else if(GameManager.Instance.GameState == GameState.HeroesTurn)
                 {
                     GameManager.Instance.ChangeState(GameState.EnemysTurn);
+                    MenuManager.Instance.BenjaminRedGreen();
                 }
             }
         }

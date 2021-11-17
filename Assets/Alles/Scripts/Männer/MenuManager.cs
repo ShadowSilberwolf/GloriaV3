@@ -33,17 +33,27 @@ public class MenuManager : MonoBehaviour
         if (Teile == null)
         {
             TileObject.SetActive(false);
-            TileUnitObject.SetActive(false);
+           
+
             return;
         }
 
         TileObject.GetComponentInChildren<Text>().text = Teile.TileName;
         TileObject.SetActive(true);
 
+        //Tile unit info
         if (Teile.OccupiedUnits)
         {
             TileUnitObject.GetComponentInChildren<Text>().text = Teile.OccupiedUnits.unitName;
             TileUnitObject.SetActive(true);
+            if(Teile.OccupiedUnits.faction == Faction.Player1)
+            {
+                TileUnitObject.GetComponent<Image>().color = new Color32(0, 255, 10, 255);
+            }
+            else if (Teile.OccupiedUnits.faction == Faction.Player2)
+            {
+                TileUnitObject.GetComponent<Image>().color = new Color32(203, 54, 63, 255);
+            }
         }
 
        

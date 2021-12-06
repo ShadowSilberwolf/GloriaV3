@@ -56,6 +56,7 @@ public class Grid : MonoBehaviour
         cam.transform.position = new Vector3((float)width / 2 - 0.5f, (float)height / 2 - 0.5f, -10);
         GameManager.Instance.ChangeState(GameState.SpawnHeroes);
         MenuManager.Instance.BenjaminRedGreen();
+
     }
 
     public Tile GetHerospawnTile()

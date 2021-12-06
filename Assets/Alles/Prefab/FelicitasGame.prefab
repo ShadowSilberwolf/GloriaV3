@@ -100,5 +100,6 @@ MonoBehaviour:
   faction: 1
   unitName: Felicitas
   health: 1000
+  floatingTextPrefab: {fileID: 4948131801697727628, guid: 37390238391f63442ae09c664a1cb643, type: 3}
   Damage: 250
   Armor: 50

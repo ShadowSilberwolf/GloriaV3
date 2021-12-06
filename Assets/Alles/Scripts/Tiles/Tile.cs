@@ -7,6 +7,8 @@ public abstract class Tile : MonoBehaviour
    
     [SerializeField] protected SpriteRenderer renderer;
     [SerializeField] private GameObject Hightlight;
+    [SerializeField] private GameObject HightlightGreen;
+    [SerializeField] private GameObject HightlightRed;
     [SerializeField] private bool isWalkable;
     public string TileName;
 
@@ -87,5 +89,10 @@ public abstract class Tile : MonoBehaviour
         unit.transform.position = transform.position;
         OccupiedUnits = unit;
         unit.OccupiedTile = this;
+    }
+
+    public void UnitHigh()
+    {
+        Debug.Log("Tits");
     }
 }

@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class GameManager : MonoBehaviour
 {
+
 
     public static GameManager Instance;
     public GameState GameState;
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.SpawnEnemys();
                 break;
             case GameState.HeroesTurn:
+                
                 break;
             case GameState.EnemysTurn:
                 break;

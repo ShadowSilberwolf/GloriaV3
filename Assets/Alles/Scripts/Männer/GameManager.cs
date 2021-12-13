@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         GameState = newState;
         
+
         switch (newState)
         {
             case GameState.GenerateGrid:
@@ -41,9 +42,10 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.SpawnEnemys();
                 break;
             case GameState.HeroesTurn:
-                
+               
                 break;
             case GameState.EnemysTurn:
+                
                 break;
                  default:
                   throw new ArgumentOutOfRangeException(nameof(newState), newState, null);

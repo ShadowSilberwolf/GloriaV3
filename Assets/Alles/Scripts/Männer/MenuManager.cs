@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     [SerializeField] public GameObject SelectedHeroObject, TileObject, TileUnitObject, Spieler1GreenSelectedHeroInfo, Spieler1GreenTileUnitInfo, 
-        Spieler2RedSelectedHeroInfo, Spieler2RedTileUnitInfo,Spieler1IstDran, Spieler2IstDran;
+        Spieler2RedSelectedHeroInfo, Spieler2RedTileUnitInfo,Spieler1IstDran, Spieler2IstDran, Background_EndScreen, Text_Spieler1, Text_Spieler2;
 
    
     private void Awake()
@@ -71,6 +71,23 @@ public class MenuManager : MonoBehaviour
         {
             Spieler2IstDran.SetActive(true);
             Spieler1IstDran.SetActive(false);
+        }
+    }
+
+    public void ShowEndScreen(int Spieler)
+    {
+        if(Spieler != 0)
+        {
+        
+            Background_EndScreen.SetActive(true);
+            if(Spieler == 1)
+            {
+                Text_Spieler2.SetActive(false);
+            }
+            else if (Spieler == 2)
+            {
+                Text_Spieler1.SetActive(false);
+            }
         }
     }
 }

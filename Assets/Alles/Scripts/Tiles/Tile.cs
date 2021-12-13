@@ -78,9 +78,11 @@ public abstract class Tile : MonoBehaviour
                 {
                     GameManager.Instance.ChangeState(GameState.EnemysTurn);
                     MenuManager.Instance.BenjaminRedGreen();
+                   
                 }
             }
         }
+        MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
     }
 
     public void SetUnit(BaseUnits unit)

@@ -16,7 +16,7 @@ public class BaseUnits : MonoBehaviour
 
     public void Attack(BaseUnits target)
     {
-        ShowDamage(Damage.ToString());                                           // GanzeZeile.
+        ShowDamage(Damage.ToString(),target);                                           // GanzeZeile.
 
         target.health = target.health - (Damage - target.Armor);
         if(target.health <= 0)
@@ -25,11 +25,11 @@ public class BaseUnits : MonoBehaviour
         }
     }
 
-    void ShowDamage(string text)                    // ShowDamage hat benjo gemacht.
+    void ShowDamage(string text, BaseUnits target)                    // ShowDamage hat benjo gemacht.
     {
         if (floatingTextPrefab)
         {
-            GameObject prefab = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            GameObject prefab = Instantiate(floatingTextPrefab, target.transform.position, Quaternion.identity);
             prefab.GetComponentInChildren<TextMesh>().text = text;
         }
     }

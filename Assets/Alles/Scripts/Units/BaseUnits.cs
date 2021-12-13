@@ -16,7 +16,7 @@ public class BaseUnits : MonoBehaviour
 
     public void Attack(BaseUnits target)
     {
-       // ShowDamage(Damage.ToString);                                           // GanzeZeile.
+        ShowDamage(Damage.ToString());                                           // GanzeZeile.
 
         target.health = target.health - (Damage - target.Armor);
         if(target.health <= 0)

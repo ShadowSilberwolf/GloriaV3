@@ -36,6 +36,7 @@ public abstract class Tile : MonoBehaviour
     {
         //if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
 
+
         if(OccupiedUnits != null)
         {
             if (OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.HeroesTurn)
@@ -51,15 +52,23 @@ public abstract class Tile : MonoBehaviour
             {
                 UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
                 UnitManager.Instance.SetSelectedPlayer(null);
+
+                MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
+
                 GameManager.Instance.ChangeState(GameState.EnemysTurn);
                 MenuManager.Instance.BenjaminRedGreen();
+
             }
             else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.EnemysTurn)
             {
                 UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
                 UnitManager.Instance.SetSelectedPlayer(null);
+
+                MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
+
                 GameManager.Instance.ChangeState(GameState.HeroesTurn);
                 MenuManager.Instance.BenjaminRedGreen();
+
             }
 
         }
@@ -95,6 +104,27 @@ public abstract class Tile : MonoBehaviour
 
     public void UnitHigh()
     {
-        Debug.Log("Tits");
+        
+        if (OccupiedUnits != null)
+        {
+            if (OccupiedUnits.faction == Faction.Player2)
+            {
+                HightlightRed.SetActive(true);
+            }
+            else if (OccupiedUnits.faction == Faction.Player1)
+            {
+                HightlightGreen.SetActive(true);
+            }
+        }
+        else 
+        {
+            HightlightRed.SetActive(false);
+            HightlightGreen.SetActive(false);
+        }
+    }
+
+    public void Update()
+    {
+        UnitHigh();
     }
 }

@@ -16,12 +16,14 @@ public class BaseUnits : MonoBehaviour
 
     public void Attack(BaseUnits target)
     {
-        ShowDamage(Damage.ToString(),target);                                           // GanzeZeile.
+        ShowDamage((Damage - target.Armor).ToString(),target);                                           // GanzeZeile.
 
         target.health = target.health - (Damage - target.Armor);
         if(target.health <= 0)
         {
             Destroy(target.gameObject);
+            MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
+
         }
     }
 

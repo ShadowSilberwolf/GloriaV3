@@ -61,7 +61,7 @@ public class MenuManager : MonoBehaviour
 
     public void BenjaminRedGreen()
     {
-        Debug.Log("Boobs");
+        
         if (GameManager.Instance.GameState == GameState.HeroesTurn)
         {
             Spieler1IstDran.SetActive(true);

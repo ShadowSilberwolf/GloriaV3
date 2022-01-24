@@ -25,8 +25,9 @@ public class Grid : MonoBehaviour
     {
         Instance = this;
         gridArray = new int[width, height];
-
         
+
+
     }
    
 

@@ -90,6 +90,7 @@ public class UnitManager : MonoBehaviour
         {
             y = 2; 
         }
+        Debug.Log("Boobs Heroes:"+ h + " (.)(.):" + e );
 
         return y;
     }

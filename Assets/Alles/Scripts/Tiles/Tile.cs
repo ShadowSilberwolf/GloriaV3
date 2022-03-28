@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Tile : MonoBehaviour
 {
    
-    [SerializeField] protected SpriteRenderer renderer;
+    
     [SerializeField] private GameObject Hightlight;
     [SerializeField] private GameObject HightlightGreen;
     [SerializeField] private GameObject HightlightRed;
@@ -29,7 +29,6 @@ public abstract class Tile : MonoBehaviour
     {
         Hightlight.SetActive(false);
         MenuManager.Instance.ShowTileInfo(null);
-
     }
 
     void OnMouseDown()
@@ -41,54 +40,36 @@ public abstract class Tile : MonoBehaviour
         {
             if (OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.HeroesTurn)
             {
-                UnitManager.Instance.SetSelectedPlayer(OccupiedUnits);
+                Select();
             }
 
             else if(OccupiedUnits.faction == Faction.Player2 && GameManager.Instance.GameState == GameState.EnemysTurn) 
             {
-                UnitManager.Instance.SetSelectedPlayer(OccupiedUnits);
+                Select();
             }
             else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player2 && GameManager.Instance.GameState == GameState.HeroesTurn)
             {
                 UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
-                UnitManager.Instance.SetSelectedPlayer(null);
 
                 MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
 
-                GameManager.Instance.ChangeState(GameState.EnemysTurn);
-                MenuManager.Instance.BenjaminRedGreen();
-
+                GameManager.Instance.EndRound();
             }
             else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.EnemysTurn)
             {
                 UnitManager.Instance.SelectedPlayer.Attack(OccupiedUnits);
-                UnitManager.Instance.SetSelectedPlayer(null);
 
                 MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
 
-                GameManager.Instance.ChangeState(GameState.HeroesTurn);
-                MenuManager.Instance.BenjaminRedGreen();
-
+                GameManager.Instance.EndRound();
             }
-
         }
         else
         {
             if(UnitManager.Instance.SelectedPlayer != null)
             {
                 SetUnit(UnitManager.Instance.SelectedPlayer);
-                UnitManager.Instance.SetSelectedPlayer(null);
-                if(GameManager.Instance.GameState == GameState.EnemysTurn)
-                {
-                    GameManager.Instance.ChangeState(GameState.HeroesTurn);
-                    MenuManager.Instance.BenjaminRedGreen();
-                }
-                else if(GameManager.Instance.GameState == GameState.HeroesTurn)
-                {
-                    GameManager.Instance.ChangeState(GameState.EnemysTurn);
-                    MenuManager.Instance.BenjaminRedGreen();
-                   
-                }
+                GameManager.Instance.EndRound();
             }
         }
         MenuManager.Instance.ShowEndScreen(UnitManager.Instance.PrüfeHeroAnzahl());
@@ -104,7 +85,6 @@ public abstract class Tile : MonoBehaviour
 
     public void UnitHigh()
     {
-        
         if (OccupiedUnits != null)
         {
             if (OccupiedUnits.faction == Faction.Player2)
@@ -122,9 +102,14 @@ public abstract class Tile : MonoBehaviour
             HightlightGreen.SetActive(false);
         }
     }
+    public void Select()
+    {
+        UnitManager.Instance.SetSelectedPlayer(OccupiedUnits);
+        UnitHigh();
+    }
 
     public void Update()
     {
-        UnitHigh();
+       // UnitHigh();
     }
 }

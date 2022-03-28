@@ -25,6 +25,21 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.GenerateGrid);
     }
 
+    public void EndRound() 
+    {
+        UnitManager.Instance.SetSelectedPlayer(null);
+        if (GameState == GameState.EnemysTurn)
+        {
+            ChangeState(GameState.HeroesTurn);
+            MenuManager.Instance.BenjaminRedGreen();
+        }
+        else if (GameState == GameState.HeroesTurn)
+        {
+            ChangeState(GameState.EnemysTurn);
+            MenuManager.Instance.BenjaminRedGreen();
+
+        }
+    }
     public void ChangeState(GameState newState)
     {
         GameState = newState;

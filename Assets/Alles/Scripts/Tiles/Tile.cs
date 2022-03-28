@@ -4,11 +4,9 @@ using UnityEngine;
 
 public abstract class Tile : MonoBehaviour
 {
-   
+
     
-    [SerializeField] private GameObject Hightlight;
-    [SerializeField] private GameObject HightlightGreen;
-    [SerializeField] private GameObject HightlightRed;
+    [SerializeField] private GameObject Hightlight, HightlightGreen, HightlightRed;
     [SerializeField] private bool isWalkable;
     public string TileName;
 
@@ -40,12 +38,12 @@ public abstract class Tile : MonoBehaviour
         {
             if (OccupiedUnits.faction == Faction.Player1 && GameManager.Instance.GameState == GameState.HeroesTurn)
             {
-                Select();
+                TobiasGibMal();
             }
 
             else if(OccupiedUnits.faction == Faction.Player2 && GameManager.Instance.GameState == GameState.EnemysTurn) 
             {
-                Select();
+                TobiasGibMal();
             }
             else if (UnitManager.Instance.SelectedPlayer != null && OccupiedUnits.faction == Faction.Player2 && GameManager.Instance.GameState == GameState.HeroesTurn)
             {
@@ -102,7 +100,7 @@ public abstract class Tile : MonoBehaviour
             HightlightGreen.SetActive(false);
         }
     }
-    public void Select()
+    public void TobiasGibMal()
     {
         UnitManager.Instance.SetSelectedPlayer(OccupiedUnits);
         UnitHigh();
@@ -110,6 +108,6 @@ public abstract class Tile : MonoBehaviour
 
     public void Update()
     {
-       // UnitHigh();
+        UnitHigh();
     }
 }

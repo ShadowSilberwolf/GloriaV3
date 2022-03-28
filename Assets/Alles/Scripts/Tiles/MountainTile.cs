@@ -6,6 +6,7 @@ public class MountainTile : Tile
 {
     [SerializeField] private Sprite baseSprite, offsetSprite;
     // Start is called before the first frame update
+    public SpriteRenderer renderer;
     public override void Init(int x, int y)
     {
         var isOffset = (x + y) % 2 == 1;
